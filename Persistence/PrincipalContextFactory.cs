@@ -9,7 +9,7 @@ namespace Persistence
         public PrincipalContext CreateDbContext(string[] args)
         {
             var builder= new DbContextOptionsBuilder<PrincipalContext>();
-            builder.UseSqlServer("Server=DESKTOP-BDPS627;Database=TestDB",
+            builder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CRUD-Db",
                 optionsBuilder => optionsBuilder
                     .MigrationsAssembly(typeof(PrincipalContext)
                     .GetTypeInfo()
