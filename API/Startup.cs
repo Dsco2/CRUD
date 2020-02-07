@@ -1,3 +1,5 @@
+using Autofac;
+using IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -39,6 +41,11 @@ namespace API
             {
                 endpoints.MapControllers();
             });
+        }
+
+        public void ConfigureContainer(Autofac.ContainerBuilder builder)
+        {
+            builder.RegisterModule<ModuleCore>();
         }
     }
 }
